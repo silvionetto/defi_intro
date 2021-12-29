@@ -20,4 +20,4 @@ jobs:
       run: docker build . --file Dockerfile --tag defi_intro:latest
 
     - run: |
-          docker run --rm --name run-local -e ETH_ACCOUNT=${{ secrets.ETH_ACCOUNT }} -e ETH_PRIVATE_KEY=${{ secrets.ETH_PRIVATE_KEY }} -e INFURA_API_KEY=${{ secrets.INFURA_API_KEY }} -it defi_intro:latest node --version
+          docker run --rm --name run-local -e ETH_ACCOUNT=${{ secrets.ETH_ACCOUNT }} -e ETH_PRIVATE_KEY=${{ secrets.ETH_PRIVATE_KEY }} -e INFURA_API_KEY=${{ secrets.INFURA_API_KEY }} -t defi_intro:latest node --version
