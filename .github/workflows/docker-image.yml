@@ -19,7 +19,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag defi_intro:latest
 
-    - run: |
+    - run: >|
           docker run 
           --rm --name run-local 
           -e ETH_ACCOUNT=${{ secrets.ETH_ACCOUNT }} 
