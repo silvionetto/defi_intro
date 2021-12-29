@@ -26,4 +26,4 @@ jobs:
           -e ETH_PRIVATE_KEY=${{ secrets.ETH_PRIVATE_KEY }} 
           -e INFURA_API_KEY=${{ secrets.INFURA_API_KEY }} 
           -t defi_intro:latest 
-          node --version
+          node app.js
