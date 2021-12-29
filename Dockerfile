@@ -1,7 +1,7 @@
 FROM node:alpine as builder
 COPY app /app
 WORKDIR /app
-RUN npm install
+RUN npm audit fix && npm install
 
 FROM node:alpine as app
 COPY --from=builder /app /app 
