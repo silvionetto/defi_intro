@@ -14,5 +14,18 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag defi_intro:$(date +%s)
+      run: docker build . --file Dockerfile --tag defi_intro:latest
+
+    - shell: pwsh
+        env:
+          ETH_ACCOUNT: ${{ secrets.ETH_ACCOUNT }}
+          ETH_PRIVATE_KEY: ${{ secrets.ETH_PRIVATE_KEY }}
+          INFURA_API_KEY: ${{ secrets.INFURA_API_KEY }}
+        run: |
+          docker run --rm --name run-local 
+            -e ETH_ACCOUNT="$env:ETH_ACCOUNT" 
+            -e ETH_PRIVATE_KEY="$env:ETH_PRIVATE_KEY" 
+            -e INFURA_API_KEY="$env:INFURA_API_KEY" 
+            defi_intro:latest
