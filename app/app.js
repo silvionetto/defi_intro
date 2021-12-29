@@ -1,8 +1,14 @@
 // Configure Web3
 const Web3 = require('web3')
-const web3 = new Web3('https://rinkeby.infura.io/v3/YOUR_API_KEY')
+
+const env = {
+  "ETH_ACCOUNT": "",
+  "ETH_PRIVATE_KEY": "",
+  "INFURA_API_KEY": ""
+}
+const web3 = new Web3('https://rinkeby.infura.io/v3/INFURA_API_KEY')
 const account = 'YOUR_ACCOUNT'
-web3.eth.accounts.wallet.add('YOUR_PRIVATE_KEY') // Never use your real wallet here!
+web3.eth.accounts.wallet.add('ETH_WALLET_PRIVATE_KEY')
 
 // Dai Token
 const daiAddress = '0xc7ad46e0b8a400bb3c915120d284aafba8fc4735'

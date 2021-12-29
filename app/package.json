@@ -1,15 +1,15 @@
 {
   "name": "defi_intro",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "app.js",
-  "author": "gregory@dappuniversity.com",
+  "author": "silvio.netto@gmail.com",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/dapp_univeristy/defi_intro.git"
+    "url": "git+ssh://git@github.com/silvionetto/defi_intro.git"
   },
   "license": "ISC",
   "dependencies": {
