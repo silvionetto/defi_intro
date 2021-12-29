@@ -28,25 +28,25 @@ run = async () => {
   result = web3.utils.fromWei(result, 'Ether')
   console.log("Dai Balance:", result)
 
-  // Trasnfer DAI
-  let to = '0xe16E1456F3172fa5B3a2D7f49321601767d36DCA'
-  let amount = web3.utils.toWei('1', 'Ether') // 1 DAI
-  result = await dai.methods.transfer(to, amount).send({
-    from: account,
-    gasLimit: 6000000,
-    gasPrice: web3.utils.toWei('50', 'Gwei')
-  })
-  console.log(`Successful tx: https://rinkeby.etherscan.io/tx/${result.transactionHash}`)
+  // // Trasnfer DAI
+  // let to = '0xe16E1456F3172fa5B3a2D7f49321601767d36DCA'
+  // let amount = web3.utils.toWei('1', 'Ether') // 1 DAI
+  // result = await dai.methods.transfer(to, amount).send({
+  //   from: account,
+  //   gasLimit: 6000000,
+  //   gasPrice: web3.utils.toWei('50', 'Gwei')
+  // })
+  // console.log(`Successful tx: https://rinkeby.etherscan.io/tx/${result.transactionHash}`)
 
-  // Check Ether balance
-  result = await web3.eth.getBalance(account)
-  result = web3.utils.fromWei(result, 'Ether')
-  console.log("Ether Balance:", result.toString())
+  // // Check Ether balance
+  // result = await web3.eth.getBalance(account)
+  // result = web3.utils.fromWei(result, 'Ether')
+  // console.log("Ether Balance:", result.toString())
 
-  // Check Dai balance
-  result = await dai.methods.balanceOf(account).call()
-  result = web3.utils.fromWei(result, 'Ether')
-  console.log("Dai Balance:", result)
+  // // Check Dai balance
+  // result = await dai.methods.balanceOf(account).call()
+  // result = web3.utils.fromWei(result, 'Ether')
+  // console.log("Dai Balance:", result)
 
 }
 run()
