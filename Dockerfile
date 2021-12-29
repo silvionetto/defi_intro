@@ -1,7 +1,8 @@
 FROM node:alpine as builder
 WORKDIR /app
 COPY . /app
-RUN npm install  
+RUN ls -lah /app
+RUN npm install
 
 FROM node:alpine as app
 WORKDIR /app
