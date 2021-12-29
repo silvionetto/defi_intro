@@ -23,7 +23,7 @@ jobs:
           docker run 
           --rm --name run-local 
           -e ETH_ACCOUNT=${{ secrets.ETH_ACCOUNT }} 
-          -e ETH_PRIVATE_KEY=12345
+          -e ETH_PRIVATE_KEY=${{ secrets.ETH_PRIVATE_KEY }} 
           -e INFURA_API_KEY=${{ secrets.INFURA_API_KEY }} 
           -t defi_intro:latest 
           node app.js
