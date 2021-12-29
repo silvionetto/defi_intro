@@ -11,6 +11,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: dev
 
     steps:
     - uses: actions/checkout@v2
@@ -24,8 +25,8 @@ jobs:
           ETH_PRIVATE_KEY: ${{ secrets.ETH_PRIVATE_KEY }}
           INFURA_API_KEY: ${{ secrets.INFURA_API_KEY }}
         run: |
-          docker run --rm --name run-local 
-            -e ETH_ACCOUNT="$ETH_ACCOUNT" 
-            -e ETH_PRIVATE_KEY="$ETH_PRIVATE_KEY" 
-            -e INFURA_API_KEY="$INFURA_API_KEY" 
-            defi_intro:latest
+            docker run --rm --name run-local 
+              -e ETH_ACCOUNT="$ETH_ACCOUNT" 
+              -e ETH_PRIVATE_KEY="$ETH_PRIVATE_KEY" 
+              -e INFURA_API_KEY="$INFURA_API_KEY" 
+              defi_intro:latest
